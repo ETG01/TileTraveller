@@ -15,4 +15,3 @@ def directions(way, locationation):
 
 
 def error(locationation):
-
