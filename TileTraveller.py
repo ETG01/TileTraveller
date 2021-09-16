@@ -32,3 +32,8 @@ def error(locationation):
             if direction == list_of_Directions[0] or direction == list_of_Directions[1] or direction == list_of_Directions[3]:
                 locationation = directions(direction, locationation)
                 return locationation
+<<<<<<< HEAD
+=======
+
+hallo
+>>>>>>> 501b1129020db5c0a058c32a55f2a44c2498c2cd
