@@ -15,8 +15,6 @@ def directions(way, locationation):
 
 
 def error(locationation):
-<<<<<<< HEAD
-=======
     if locationation == 1 or locationation == 4:
         while locationation == 1 or locationation == 4:
           print("Not a valid direction!")
@@ -32,8 +30,4 @@ def error(locationation):
                 locationation = directions(direction, locationation)
                 return locationation
 
-<<<<<<< HEAD
->>>>>>> c8cf366d05091d0135a1f01bbf89e4e0ecccf680
-=======
 hallo
->>>>>>> 63315534f326b34eb2f5affefcfaeaffd8a4be26
