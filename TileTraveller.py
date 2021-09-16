@@ -1,39 +1,99 @@
-from typing import get_type_hints
+# tile grid:
+# 3 6 9
+# 2 5 8
+# 1 4 7
+########
+# start tile == 1
+# Victory tile == 7
+##########
+# Movment = NESW
+possible_movements = ['N','E','S','W']
+current_tile = 1
 
-
-list_of_Directions = "NSWE"
-position = 1
-victory = False
-
-def directions(way, locationation):
+def movement(way):
     if way == "N":
-        locationation = locationation + 1
-    elif way == "S":
-        locationation = locationation - 1
-    elif way == "W":
-        locationation = locationation - 3
+        return 1
     elif way == "E":
-        locationation = locationation + 3
-    return locationation
+        return 3
+    elif way == "S":
+        return -1
+    elif way == "W":
+        return -3
 
 
-def error(locationation):
-    if locationation == 1 or locationation == 4:
-        while locationation == 1 or locationation == 4:
-          print("Not a valid direction!")
-            Direction = input("Direction: ").upper()
-            if Direction == list_of_Directions[0]:
-                locationation = directions(Direction, locationation)
-                return locationation  
-    elif locationation == 2:
-        while locationation == 2:
-            print("not a valid direction!")
-            direction = input("Dirction: ").upper()
-            if direction == list_of_Directions[0] or direction == list_of_Directions[1] or direction == list_of_Directions[3]:
-                locationation = directions(direction, locationation)
-                return locationation
-<<<<<<< HEAD
-=======
+while True:
+    if current_tile == 1 or current_tile ==4:
+        print('You can travel: (N)orth.')
+        direction = input('Direction: ').upper()
+        if direction != possible_movements[0]:
+            print('Not a valid direction!')
+        else:
+            current_tile += movement(direction)
+    
+    elif current_tile ==2:
+        print('You can travel: (N)orth or (E)ast or (S)outh.')
+        direction = input('Direction: ').upper()
+        if direction != possible_movements[0] and direction != possible_movements[1] and direction !=possible_movements[2]:
+            print('Not a valid direction!')
+        else:
+            current_tile += movement(direction)
+    
+    elif current_tile == 3:
+        print('You can travel: (E)ast or (S)outh.')
+        direction = input('Direction: ').upper()
+        if direction != possible_movements[1] and direction != possible_movements[2]:
+            print('Not a valid direction!')
+        else:
+            current_tile += movement(direction)
 
-hallo
->>>>>>> 501b1129020db5c0a058c32a55f2a44c2498c2cd
+    elif current_tile == 5 or current_tile == 9:
+        print('You can travel: (S)outh or (W)est.')
+        direction = input('Direction: ').upper()
+        if direction != possible_movements[2] and direction != possible_movements[3]:
+            print('Not a valid direction!')
+        else: current_tile += movement(direction)
+    
+    elif current_tile == 6:
+        print('You can travel: (E)ast or (W)est.')
+        direction = input('Direction: ').upper()
+        if direction != possible_movements[1] and direction != possible_movements[3]:
+            print('Not a valid direction!')
+        else: current_tile += movement(direction)
+    
+    elif current_tile == 8:
+        print('You can travel: (N)orth or (S)outh.')
+        direction = input('Direction: ').upper()
+        if direction != possible_movements[0] and direction != possible_movements[2]:
+            print('Not a valid direction!')
+        else: current_tile += movement(direction)
+    
+    elif current_tile == 7:
+        print('Victory!')
+        break
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
