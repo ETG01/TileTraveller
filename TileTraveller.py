@@ -15,4 +15,18 @@ def directions(way, locationation):
 
 
 def error(locationation):
+    if locationation == 1 or locationation == 4:
+        while locationation == 1 or locationation == 4:
+          print("Not a valid direction!")
+            Direction = input("Direction: ").upper()
+            if Direction == list_of_Directions[0]:
+                locationation = directions(Direction, locationation)
+                return locationation  
+    elif locationation == 2:
+        while locationation == 2:
+            print("not a valid direction!")
+            direction = input("Dirction: ").upper()
+            if direction == list_of_Directions[0] or direction == list_of_Directions[1] or direction == list_of_Directions[3]:
+                locationation = directions(direction, locationation)
+                return locationation
 
